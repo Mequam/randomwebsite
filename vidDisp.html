@@ -1,0 +1,23 @@
+<!--
+	This file is a video display inteanded to be included in a main html file
+	it displays the video targeted by the targetIdx of the apps scope that it references
+-->
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="embed-responsive embed-responsive-16by9">
+			<video class="embed-responsive-item target-video-output" src="{{lstVid[targetIdx].src}}" type="video/{{lstVid[targetIdx].type}}" controls>
+				<p>
+					Your browser does not support video :( <br>
+					Have a link instead :D <a href="Weekly Update {{targetIdx+1}} - {{lstVid[targetIdx].src}}">week1.mp4</a>
+				</p>
+			</video>
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<h3>{{getTitle(targetIdx,lstVid[targetIdx].title)}}</h3>
+		</div>
+	</div>
+</div>

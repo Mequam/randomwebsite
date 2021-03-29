@@ -5,35 +5,31 @@
 		<link rel="stylesheet" href="style/main.css">
 		<title>Sound Mess</title>
 	</head>
-	<body>
-		<div class="container">
+	<body ng-app="vidDisp" 
+		ng-init='lstVid=[{type:mp4,thumbnail:"videos/soundMess/week1/thumbnail.png",src:"videos/soundMess/week1/week1.mp4",title:"Silo Boss"},
+				{type:mp4,thumbnail:"videos/soundMess/week2/thumbnail.png",src:"videos/soundMess/week2/week2.mp4",title:"Migrains and Sadness"}]' 
+		class="container">
+		<div>
 			<div class="page-header">
 				<h1>Sound Mess</h1>
 			</div>
-			<div class="row">
-				<!--space hack using bootstrap 3 columns--!>
-				<div class=col-md-2>
-				</div>
+			<div class="row" ng-controller="lstCntrl">
 				
+				<div class="col-md-1">
+				</div>
+				<!--space hack using bootstrap 3 columns--!>
 				<div class="col-md-8 text-center">
-					<div class="embed-responsive embed-responsive-16by9">
-						<video class="embed-responsive-item" controls>
-							<source src="./videos/soundMess/week1.mp4" 
-								type="video/mp4">
-							<p>
-								Your browser does not support video :( <br>
-								Have a link instead :D <a href="./videos/soundMess/week1.mp4">week1.mp4</a>
-							</p>
-						</video>	
-						
-					</div>
+					<ng-include src="'vidDisp.html'"></ng-include>
 				</div>
 				
 				<!--space hack using bootstrap 3 columns--!>
-				<div class=col-md-2>
+				<div class=col-md-3>
+					<ng-include src="'videoSelector.html'"></ng-include>
 				</div>
 
 			</div>
 		</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>	
+	<script src="js/videos.js"></script>
 	</body>
 </html>

@@ -1,0 +1,17 @@
+<!--
+	This file is inteanded to be ng-included into other vidDisp apps.
+
+	It lists each video thumbnail and changes the selected video depending on the
+	thumbnail selected by the user
+--!>
+<div class="animatedContainer">
+	<ul class="ulVidSelect">
+		<li class="liVidSelect" ng-repeat="vid in lstVid">	
+				<button style="background-image: url({{vid.thumbnail}});"
+				class="btnVidSelect" ng-click="setIdx($index)">
+				
+				</button>
+				<p class="card-title">{{getTitle($index,lstVid[$index].title)}}</p>
+		</li>	
+	</ul>
+</div>

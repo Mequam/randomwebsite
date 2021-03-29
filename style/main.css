@@ -1,5 +1,35 @@
-.dynamicVideo {
-	 width=100px;
-	height=100px;
+.ulVidSelect {	
+	list-style-type: none;
+	padding: 0px;
+	overflow: none;	
+}
 
+.ulVidSelect li {
+	margin: 0px;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	display: block;			
+}
+.ulVidSelect li + li {
+	border-top: 1px solid gray;
+}
+.btnVidSelect {
+	display: inline;
+	width: 10em;
+	height: 5.625em;
+	background-size: 100% 100%;
+}
+
+.btnVidSelect + p {
+	display: block;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-size: 50%;
+	font-weight: bold;
+}
+
+@media screen  and (max-width: 767px) and (min-width: 467px) {
+  .btnVidSelect + p {
+	display: inline;
+	}
 }
