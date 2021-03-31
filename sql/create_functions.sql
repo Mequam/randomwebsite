@@ -24,9 +24,10 @@ CREATE OR REPLACE FUNCTION createPlaylist(title varchar) RETURNS integer AS $$
 	END;
 $$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION videosInPlayList(pla_id_arg integer) RETURNS TABLE(vid_id integer,vid_update date,vid_source varchar,vid_title varchar) 
+CREATE OR REPLACE FUNCTION videosInPlayList(pla_id_arg integer) RETURNS TABLE(vid_id integer,
+					vid_update date,vid_thumb varchar,vid_source varchar,vid_title varchar) 
 	AS $$ 
-		SELECT video.vid_id,video.vid_update,video.vid_source,video.vid_title 
+		SELECT video.vid_id,video.vid_update,video.vid_thumb,video.vid_source,video.vid_title 
 		FROM video INNER JOIN (SELECT * FROM playlist2vid WHERE playlist2vid.pla_id=pla_id_arg) AS t1 ON t1.vid_id=video.vid_id 
 	$$ 
 LANGUAGE SQL;

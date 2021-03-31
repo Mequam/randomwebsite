@@ -6,8 +6,19 @@
 		<title>Sound Mess</title>
 	</head>
 	<body ng-app="vidDisp" 
-		ng-init='lstVid=[{type:mp4,thumbnail:"videos/soundMess/week1/thumbnail.png",src:"videos/soundMess/week1/week1.mp4",title:"Silo Boss"},
-				{type:mp4,thumbnail:"videos/soundMess/week2/thumbnail.png",src:"videos/soundMess/week2/week2.mp4",title:"Migrains and Sadness"}]' 
+		ng-init="<?php
+			$conn = pg_connect("dbname=myTube");
+			$result = pg_query_params($conn,"SELECT vid_source,vid_thumb,vid_title FROM videosInPlayList($1);",ARRAY($_GET["PLAY_LIST_ID"]));//TODO: we could use the playlist name here, better for users
+			echo 'lstVid = [';
+			while ($row = pg_fetch_row($result)) {
+				echo '{src:\''.$row[0].'\',thumbnail:\''.$row[1].'\',title:\''.$row[2].'\'},';
+			}
+			echo ']';
+			pg_close($conn)
+			
+			//'lstVid=[{type:mp4,thumbnail:"videos/soundMess/week1/thumbnail.png",src:"videos/soundMess/week1/week1.mp4",title:"Silo Boss"},
+			//{type:mp4,thumbnail:"videos/soundMess/week2/thumbnail.png",src:"videos/soundMess/week2/week2.mp4",title:"Migrains and Sadness"}]'
+	?>"
 		class="container">
 		<div>
 			<div class="page-header">
