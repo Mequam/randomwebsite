@@ -1,3 +1,55 @@
+/*Menu css code*/
+.drop-menu {
+	width: 8em;
+	height: 4em;
+	list-style-type: none;	
+	background-color: #EBEBEB;			
+	position: absolute;
+	right: 0%;
+	top: 0%;
+	z-index: 1;
+}
+.drop-menu:hover {
+	height: 8em;
+}
+.drop-menu li {
+	text-align: center;
+	background-color: #EBEBEB;	
+	visibility:hidden;
+	position: absolute;
+	padding: 2px;
+	width: 100%;
+	top: 100%;
+	left: 0%;
+}
+.drop-menu:hover .drop-menu-1 {
+	display: block;
+	visibility: visible;
+	animation-name: fall1;
+	animation-duration: 0.5s;
+	top: 50%;
+}
+.drop-menu:hover .drop-menu-2 {
+	display: block;
+	visibility: visible;
+	animation-name: fall2;
+	animation-duration: 0.5s;
+	top: 74%;
+}
+
+.drop-menu:first-child {
+	visibility: visible;
+}
+
+@keyframes fall1 {
+	0% {top : 0%;}	
+	100% {top : 50%;}
+}
+@keyframes fall2 {
+	0% {top:0%;}
+	100% {top:74%;}
+}
+
 .ulVidSelect {	
 	list-style-type: none;
 	padding: 0px;
@@ -24,7 +76,7 @@
 	display: block;
 	padding-bottom: 0px;
 	margin-bottom: 0px;
-	font-size: 50%;
+	font-size: 75%;
 	font-weight: bold;
 }
 

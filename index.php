@@ -22,7 +22,12 @@
 		class="container">
 		<div>
 			<div class="page-header">
-				<h1>Sound Mess</h1>
+				<h1>Sound Mess</h1>		
+						<ul class="drop-menu">
+							<img></img>
+							<li class="drop-menu-1">Menu Item 1</li>
+							<li class="drop-menu-2">Menu Item 2</li>
+						</ul>	
 			</div>
 			<div class="row" ng-controller="lstCntrl">
 				
